@@ -8,33 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 350 100% 98%;
+    --foreground: 330 25% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 340 50% 97%;
+    --card-foreground: 330 25% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 340 50% 97%;
+    --popover-foreground: 330 25% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 320 30% 65%;
+    --primary-foreground: 340 50% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 280 20% 85%;
+    --secondary-foreground: 330 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 310 15% 90%;
+    --muted-foreground: 320 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 30% 80%;
+    --accent-foreground: 330 25% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 340 50% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 320 15% 88%;
+    --input: 320 15% 88%;
+    --ring: 320 30% 65%;
+
+    /* Custom wedding theme colors */
+    --rose-blush: 340 60% 85%;
+    --lavender-mist: 280 25% 88%;
+    --sage-green: 140 20% 80%;
+    --cream-white: 45 30% 95%;
+    --dusty-pink: 320 40% 75%;
 
     --radius: 0.5rem;
 
