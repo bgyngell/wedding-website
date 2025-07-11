@@ -88,7 +88,8 @@ const Songs = () => {
       {/* Search and Filters */}
       <section className="py-8 px-4 bg-card border-b">
         <div className="container mx-auto">
-          <div className="flex-1 max-w-md">
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+            <div className="flex-1 min-w-sm max-w-md">
               <Input
                 placeholder="Search songs or artists..."
                 value={searchTerm}
@@ -96,7 +97,6 @@ const Songs = () => {
                 className="w-full"
               />
             </div>
-          <div className="flex flex-col md:flex-row gap-4 items-center">
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
