@@ -74,7 +74,7 @@ const Songs = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <section className="bg-gradient-to-br from-dusty-rose to-cream-white py-16 px-4">
+      <section className="bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose py-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-4">
             Song Repertoire
@@ -88,8 +88,7 @@ const Songs = () => {
       {/* Search and Filters */}
       <section className="py-8 px-4 bg-card border-b">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <div className="flex-1 max-w-md">
+          <div className="flex-1 max-w-md">
               <Input
                 placeholder="Search songs or artists..."
                 value={searchTerm}
@@ -97,6 +96,7 @@ const Songs = () => {
                 className="w-full"
               />
             </div>
+          <div className="flex flex-col md:flex-row gap-4 items-center">
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button

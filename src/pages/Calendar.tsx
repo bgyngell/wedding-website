@@ -31,7 +31,7 @@ const Calendar = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-dusty-rose to-cream-white flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose flex items-center justify-center px-4">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -176,7 +176,7 @@ const Calendar = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 px-4 bg-gradient-to-br from-cream-white to-terracotta">
+      <section className="py-16 px-4 bg-gradient-to-br from-dusty-rose to-cream-white">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-serif text-3xl text-foreground mb-6">

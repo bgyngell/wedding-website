@@ -92,7 +92,7 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose rounded-lg flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-dusty-rose to-cream-white rounded-lg flex items-center justify-center">
                 <Music className="h-24 w-24 text-white" />
               </div>
             </div>
@@ -140,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* Booking Form Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose">
+      <section className="py-16 px-4 bg-gradient-to-br from-dusty-rose to-cream-white">
         <div className="container mx-auto">
           <BookingForm />
         </div>
