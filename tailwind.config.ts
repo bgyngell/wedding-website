@@ -62,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'rose-blush': 'hsl(var(--rose-blush))',
-				'lavender-mist': 'hsl(var(--lavender-mist))',
-				'sage-green': 'hsl(var(--sage-green))',
+				'terracotta': 'hsl(var(--terracotta))',
+				'warm-sand': 'hsl(var(--warm-sand))',
+				'sage-mist': 'hsl(var(--sage-mist))',
 				'cream-white': 'hsl(var(--cream-white))',
-				'dusty-pink': 'hsl(var(--dusty-pink))'
+				'dusty-rose': 'hsl(var(--dusty-rose))'
 			},
 			fontFamily: {
 				'serif': ['Playfair Display', 'serif'],

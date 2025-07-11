@@ -8,40 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 350 100% 98%;
-    --foreground: 330 25% 25%;
+    --background: 25 25% 96%;
+    --foreground: 20 15% 25%;
 
-    --card: 340 50% 97%;
-    --card-foreground: 330 25% 25%;
+    --card: 25 20% 94%;
+    --card-foreground: 20 15% 25%;
 
-    --popover: 340 50% 97%;
-    --popover-foreground: 330 25% 25%;
+    --popover: 25 20% 94%;
+    --popover-foreground: 20 15% 25%;
 
-    --primary: 320 30% 65%;
-    --primary-foreground: 340 50% 97%;
+    --primary: 15 45% 65%;
+    --primary-foreground: 25 20% 94%;
 
-    --secondary: 280 20% 85%;
-    --secondary-foreground: 330 25% 25%;
+    --secondary: 35 20% 85%;
+    --secondary-foreground: 20 15% 25%;
 
-    --muted: 310 15% 90%;
-    --muted-foreground: 320 10% 55%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 25 10% 55%;
 
-    --accent: 200 30% 80%;
-    --accent-foreground: 330 25% 25%;
+    --accent: 200 25% 80%;
+    --accent-foreground: 20 15% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 340 50% 97%;
+    --destructive-foreground: 25 20% 94%;
 
-    --border: 320 15% 88%;
-    --input: 320 15% 88%;
-    --ring: 320 30% 65%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 15 45% 65%;
 
-    /* Custom wedding theme colors */
-    --rose-blush: 340 60% 85%;
-    --lavender-mist: 280 25% 88%;
-    --sage-green: 140 20% 80%;
-    --cream-white: 45 30% 95%;
-    --dusty-pink: 320 40% 75%;
+    /* Custom terracotta theme colors */
+    --terracotta: 15 45% 65%;
+    --warm-sand: 35 25% 85%;
+    --sage-mist: 140 15% 80%;
+    --cream-white: 45 20% 94%;
+    --dusty-rose: 25 30% 75%;
 
     --radius: 0.5rem;
 
