@@ -74,7 +74,7 @@ const Songs = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <section className="bg-gradient-to-br from-dusty-pink via-sage-mist to-dusty-rose py-16 px-4">
+      <section className="bg-gradient-to-br from-dusty-pink to-dusty-rose py-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-4">
             Song Repertoire

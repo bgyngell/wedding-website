@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-terracotta via-sage-mist to-dusty-rose py-20 px-4">
+      <section className="bg-gradient-to-br from-terracotta to-dusty-rose py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6">
             Your Perfect Wedding
@@ -92,7 +92,7 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-dusty-pink to-dusty-rose rounded-lg flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-terracotta to-dusty-rose rounded-lg flex items-center justify-center">
                 <Music className="h-24 w-24 text-white" />
               </div>
             </div>
@@ -140,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* Booking Form Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-sage-mist to-cream-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-terracotta to-cream-white">
         <div className="container mx-auto">
           <BookingForm />
         </div>
