@@ -17,31 +17,31 @@ All colors MUST be HSL.
     --popover: 25 20% 94%;
     --popover-foreground: 20 15% 25%;
 
-    --primary: 200 45% 75%;
+    --primary: 15 45% 65%;
     --primary-foreground: 25 20% 94%;
 
-    --secondary: 55 40% 88%;
+    --secondary: 35 20% 85%;
     --secondary-foreground: 20 15% 25%;
 
-    --muted: 210 20% 92%;
+    --muted: 30 15% 88%;
     --muted-foreground: 25 10% 55%;
 
-    --accent: 190 35% 82%;
+    --accent: 200 25% 80%;
     --accent-foreground: 20 15% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 25 20% 94%;
 
-    --border: 210 15% 88%;
-    --input: 210 15% 88%;
-    --ring: 200 45% 75%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 15 45% 65%;
 
     /* Custom colour-1 theme colors */
-    --colour-1: 200 45% 75%;
-    --colour-2: 55 40% 88%;
-    --colour-3: 190 35% 82%;
+    --colour-1: 15 45% 65%;
+    --colour-2: 35 25% 85%;
+    --colour-3: 140 15% 80%;
     --colour-white: 45 20% 94%;
-    --colour-grey: 210 25% 80%;
+    --colour-grey: 25 30% 75%;
 
     --radius: 0.5rem;
 
