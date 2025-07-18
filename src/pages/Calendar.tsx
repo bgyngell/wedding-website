@@ -74,7 +74,7 @@ const Calendar = () => {
       {/* Header */}
       <section className="bg-colour-2 pt-16 pb-12 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
             Booking Calendar
           </h1>
           <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -220,15 +220,15 @@ const Calendar = () => {
               to reach out directly.
             </p>
             <div className="space-y-4 font-sans">
-              <p className="text-foreground">
+              <p className="text-muted-foreground">
                 <strong>Direct Line:</strong> Available for wedding planners and
                 agents
               </p>
-              <p className="text-foreground">
+              <p className="text-muted-foreground">
                 <strong>Response Time:</strong> Within 2 hours during business
                 hours
               </p>
-              <p className="text-foreground">
+              <p className="text-muted-foreground">
                 <strong>Booking Window:</strong> 12-18 months advance booking
                 recommended
               </p>

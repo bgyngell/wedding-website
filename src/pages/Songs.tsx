@@ -321,7 +321,7 @@ const Songs = () => {
       {/* Header */}
       <section className="bg-colour-2 pt-16 pb-8 px-4">
         <div className="container mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
             Song Repertoire
           </h1>
           <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">

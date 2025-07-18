@@ -19,7 +19,7 @@ const Privacy = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16 px-4 relative">
+      <section className="pb-16 pt-24 px-4 relative">
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
             viewBox="0 0 1200 120"
