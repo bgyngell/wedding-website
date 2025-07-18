@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-colour-3 via-colour-white to-colour-grey py-20 px-4">
+      <section className="bg-gradient-to-br from-colour-1 via-colour-white to-colour-1 py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6">
             Your Perfect Wedding
