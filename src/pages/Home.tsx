@@ -92,9 +92,11 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-dusty-rose to-cream-white rounded-lg flex items-center justify-center">
-                <Music className="h-24 w-24 text-white" />
-              </div>
+              <img 
+                src="/lovable-uploads/60395de9-eb19-46f9-81c3-375ca13b178b.png" 
+                alt="Robbie Gyngell performing with guitar and microphone"
+                className="aspect-square object-cover rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
