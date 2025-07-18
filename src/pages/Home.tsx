@@ -31,7 +31,7 @@ const Home = () => {
       <section className="bg-gradient-to-br from-colour-grey via-colour-white to-colour-grey py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6">
-            Your Perfect Wedding
+            Your Perfect Wedding Music
             <span className="block text-primary">Soundtrack</span>
           </h1>
           <p className="font-sans text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
