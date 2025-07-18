@@ -31,7 +31,7 @@ const Calendar = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-colour-grey via-colour-white to-colour-grey flex items-center justify-center px-4">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -70,7 +70,7 @@ const Calendar = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <section className="bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose py-16 px-4">
+      <section className="bg-gradient-to-br from-colour-grey via-colour-white to-colour-grey py-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-4">
             Booking Calendar
@@ -176,7 +176,7 @@ const Calendar = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 px-4 bg-gradient-to-br from-dusty-rose to-cream-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-colour-grey to-colour-white">
         <div className="container mx-auto">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-serif text-3xl text-foreground mb-6">

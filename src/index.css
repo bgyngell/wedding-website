@@ -36,12 +36,12 @@ All colors MUST be HSL.
     --input: 30 15% 85%;
     --ring: 15 45% 65%;
 
-    /* Custom terracotta theme colors */
-    --terracotta: 15 45% 65%;
-    --warm-sand: 35 25% 85%;
-    --sage-mist: 140 15% 80%;
-    --cream-white: 45 20% 94%;
-    --dusty-rose: 25 30% 75%;
+    /* Custom colour-1 theme colors */
+    --colour-1: 15 45% 65%;
+    --colour-2: 35 25% 85%;
+    --colour-3: 140 15% 80%;
+    --colour-white: 45 20% 94%;
+    --colour-grey: 25 30% 75%;
 
     --radius: 0.5rem;
 

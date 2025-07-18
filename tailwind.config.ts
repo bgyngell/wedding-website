@@ -62,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'terracotta': 'hsl(var(--terracotta))',
-				'warm-sand': 'hsl(var(--warm-sand))',
-				'sage-mist': 'hsl(var(--sage-mist))',
-				'cream-white': 'hsl(var(--cream-white))',
-				'dusty-rose': 'hsl(var(--dusty-rose))'
+				'colour-1': 'hsl(var(--colour-1))',
+				'colour-2': 'hsl(var(--colour-2))',
+				'colour-3': 'hsl(var(--colour-3))',
+				'colour-white': 'hsl(var(--colour-white))',
+				'colour-grey': 'hsl(var(--colour-grey))'
 			},
 			fontFamily: {
 				'serif': ['Playfair Display', 'serif'],

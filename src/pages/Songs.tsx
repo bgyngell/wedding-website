@@ -74,7 +74,7 @@ const Songs = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <section className="bg-gradient-to-br from-dusty-rose via-cream-white to-dusty-rose py-16 px-4">
+      <section className="bg-gradient-to-br from-colour-grey via-colour-white to-colour-grey py-16 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-4">
             Song Repertoire
@@ -189,7 +189,7 @@ const Songs = () => {
       </section>
 
       {/* Booking Form */}
-      <section className="py-16 px-4 bg-gradient-to-br from-dusty-rose to-cream-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-colour-grey to-colour-white">
         <div className="container mx-auto">
           <BookingForm />
         </div>
