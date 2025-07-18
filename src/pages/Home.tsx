@@ -49,12 +49,11 @@ const Home = () => {
       <section className="bg-colour-2 pt-20 pb-12 px-4 relative">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6">
-            Your Perfect Wedding
-            <span className="block text-primary">Soundtrack</span>
+            Give Your Wedding
+            <span className="block text-primary">Some Soul</span>
           </h1>
           <p className="font-sans text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Creating magical musical moments for your special day with
-            professional guitar, vocals, DJ sets, and MC services.
+            Professional guitar, vocals, DJ sets, and MC services
           </p>
           <Button size="lg" className="font-sans text-lg px-8 py-3">
             Book Your Date
@@ -90,7 +89,7 @@ const Home = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/PFvowLKCTdM"
+                src="https://www.youtube.com/embed/v7DD6B3rz4A"
                 title="Robbie Gyngell Performance"
                 className="w-full h-full"
                 frameBorder="0"
