@@ -13,12 +13,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-card border-b border-border sticky top-0 z-50">
+    <nav className="bg-colour-1 border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Music className="h-8 w-8 text-primary" />
-            <span className="font-serif text-xl font-semibold text-foreground">
+            <Music className="h-8 w-8 text-primary-foreground" />
+            <span className="font-serif text-xl font-semibold text-primary-foreground">
               Robbie Gyngell
             </span>
           </Link>
@@ -29,10 +29,10 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-sans font-medium transition-colors hover:text-primary ${
+                className={`font-sans font-medium transition-colors hover:text-foreground ${
                   location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "text-foreground"
+                    : "text-primary-foreground"
                 }`}
               >
                 {item.label}

@@ -8,96 +8,104 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 25 25% 96%;
-    --foreground: 20 15% 25%;
+    --background: 50 20% 98%;
+    --foreground: 210 20% 25%;
 
-    --card: 25 20% 94%;
-    --card-foreground: 20 15% 25%;
+    --card: 50 15% 96%;
+    --card-foreground: 210 20% 25%;
 
-    --popover: 25 20% 94%;
-    --popover-foreground: 20 15% 25%;
+    --popover: 50 15% 96%;
+    --popover-foreground: 210 20% 25%;
 
-    --primary: 15 45% 65%;
-    --primary-foreground: 25 20% 94%;
+    --primary: 200 45% 60%;
+    --primary-foreground: 50 15% 96%;
 
-    --secondary: 35 20% 85%;
-    --secondary-foreground: 20 15% 25%;
+    --secondary: 50 25% 88%;
+    --secondary-foreground: 210 20% 25%;
 
-    --muted: 30 15% 88%;
-    --muted-foreground: 25 10% 55%;
+    --muted: 45 20% 92%;
+    --muted-foreground: 210 15% 55%;
 
-    --accent: 200 25% 80%;
-    --accent-foreground: 20 15% 25%;
+    --accent: 195 35% 85%;
+    --accent-foreground: 210 20% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 25 20% 94%;
+    --destructive-foreground: 50 15% 96%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 15 45% 65%;
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 200 45% 70%;
 
-    /* Custom colour-1 theme colors */
-    --colour-1: 15 45% 65%;
-    --colour-2: 35 25% 85%;
-    --colour-3: 140 15% 80%;
-    --colour-white: 45 20% 94%;
-    --colour-grey: 25 30% 75%;
+    /* Custom beachy theme colors */
+    --colour-1: 200 45% 70%;
+    --colour-2: 50 55% 85%;
+    --colour-3: 195 30% 80%;
+    --colour-white: 0 0% 98%;
+    --colour-grey: 50 40% 85%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 50 15% 98%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 210 20% 26%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 200 45% 70%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 50 15% 96%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 50 15% 95%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 210 20% 25%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 45 20% 90%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 200 45% 70%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 25% 8%;
+    --foreground: 50 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 25% 10%;
+    --card-foreground: 50 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 25% 10%;
+    --popover-foreground: 50 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 200 50% 65%;
+    --primary-foreground: 210 25% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 50 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 30% 20%;
+    --accent-foreground: 50 20% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 50 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 210 20% 15%;
+    --input: 210 20% 15%;
+    --ring: 200 50% 65%;
+
+    /* Dark mode beachy colors */
+    --colour-1: 200 50% 65%;
+    --colour-2: 50 30% 70%;
+    --colour-3: 195 25% 60%;
+    --colour-white: 210 25% 12%;
+    --colour-grey: 50 30% 70%;
+
+    --sidebar-background: 210 25% 8%;
+    --sidebar-foreground: 50 20% 90%;
+    --sidebar-primary: 200 50% 65%;
+    --sidebar-primary-foreground: 210 25% 8%;
+    --sidebar-accent: 210 20% 12%;
+    --sidebar-accent-foreground: 50 20% 90%;
+    --sidebar-border: 210 20% 12%;
+    --sidebar-ring: 200 50% 65%;
   }
 }
 
