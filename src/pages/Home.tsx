@@ -56,13 +56,15 @@ const Home = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video bg-muted rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <Play className="h-20 w-20 text-primary mx-auto mb-4" />
-                <p className="font-sans text-muted-foreground">
-                  Performance video coming soon
-                </p>
-              </div>
+            <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/PFvowLKCTdM"
+                title="Robbie Gyngell Performance"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
