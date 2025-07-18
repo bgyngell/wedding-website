@@ -17,8 +17,8 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Music className="h-8 w-8 text-primary-foreground" />
-            <span className="font-serif text-xl font-semibold text-primary-foreground">
+            <Music className="h-8 w-8 text-foreground" />
+            <span className="font-serif text-xl font-semibold text-foreground">
               Robbie Gyngell
             </span>
           </Link>
@@ -62,8 +62,8 @@ const Navigation = () => {
                 to={item.path}
                 className={`block py-2 font-sans font-medium transition-colors hover:text-primary ${
                   location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "text-foreground"
+                    : "text-primary-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
