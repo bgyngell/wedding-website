@@ -19,14 +19,15 @@ const BookingForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // For now, just show a success message
     // Email integration will be added later
     toast({
       title: "Booking Request Sent!",
-      description: "Thank you for your inquiry. I'll get back to you within 24 hours.",
+      description:
+        "Thank you for your inquiry. I'll get back to you within 24 hours.",
     });
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -36,7 +37,9 @@ const BookingForm = () => {
     });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -50,14 +53,18 @@ const BookingForm = () => {
           Book Your Perfect Day
         </CardTitle>
         <p className="text-muted-foreground font-sans">
-          Let's create magical moments together. Tell me about your special event.
+          Let's create magical moments together. Tell me about your special
+          event.
         </p>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="flex items-center gap-2 font-sans">
+              <Label
+                htmlFor="name"
+                className="flex items-center gap-2 font-sans"
+              >
                 <User className="h-4 w-4" />
                 Name
               </Label>
@@ -71,7 +78,10 @@ const BookingForm = () => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email" className="flex items-center gap-2 font-sans">
+              <Label
+                htmlFor="email"
+                className="flex items-center gap-2 font-sans"
+              >
                 <Mail className="h-4 w-4" />
                 Email
               </Label>
@@ -86,9 +96,12 @@ const BookingForm = () => {
               />
             </div>
           </div>
-          
+
           <div className="space-y-2">
-            <Label htmlFor="eventDate" className="flex items-center gap-2 font-sans">
+            <Label
+              htmlFor="eventDate"
+              className="flex items-center gap-2 font-sans"
+            >
               <Calendar className="h-4 w-4" />
               Event Date
             </Label>
@@ -101,7 +114,7 @@ const BookingForm = () => {
               required
             />
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="description" className="font-sans">
               Tell me about your event
@@ -116,11 +129,11 @@ const BookingForm = () => {
               required
             />
           </div>
-          
+
           <Button type="submit" className="w-full font-sans">
             Send Booking Request
           </Button>
-          
+
           <p className="text-xs text-muted-foreground text-center font-sans">
             By submitting this form, you agree to our{" "}
             <Link to="/privacy" className="text-primary hover:underline">

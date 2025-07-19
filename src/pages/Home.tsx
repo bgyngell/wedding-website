@@ -52,8 +52,9 @@ const Home = () => {
             Give Your Wedding
             <span className="block text-primary">Some Soul</span>
           </h1>
-          <p className="font-sans text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Professional guitar, vocals, DJ sets, and MC services
+          <p className="font-sans text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
+            Professional guitar, vocals, DJ sets, and MC services for Sydney and
+            the Illawarra
           </p>
           <Button size="lg" className="font-sans text-lg px-8 py-3">
             Book Your Date
@@ -118,7 +119,7 @@ const Home = () => {
                   sophistication.
                 </p>
                 <p>
-                  After completing his Music Degree at the University of
+                  While completing his Music Degree at the University of
                   Wollongong, Robbie embarked on a professional musical journey
                   that has spanned over a decade. His experience ranges from
                   intimate solo performances to dynamic band collaborations,
@@ -132,8 +133,7 @@ const Home = () => {
                   magical soundtrack to their love story.
                 </p>
                 <p className="font-medium text-foreground">
-                  "Music has the power to transform moments into memories. I'm
-                  honored to be part of your special day."
+                  "Music has the power to transform moments into memories."
                 </p>
               </div>
             </div>
@@ -192,7 +192,7 @@ const Home = () => {
       </section>
 
       {/* Booking Form Section */}
-      <section className="pt-24 pb-16 px-4 bg-colour-1 relative">
+      <section className="pt-24 pb-16 px-4 bg-foreground relative">
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
             viewBox="0 0 1200 120"

@@ -8,104 +8,104 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 50 20% 98%;
-    --foreground: 210 20% 25%;
+    --background: 25 15% 85%;
+    --foreground: 10 54% 22%;
 
-    --card: 50 15% 96%;
-    --card-foreground: 210 20% 25%;
+    --card: 25 20% 88%;
+    --card-foreground: 10 54% 22%;
 
-    --popover: 50 15% 96%;
-    --popover-foreground: 210 20% 25%;
+    --popover: 25 20% 88%;
+    --popover-foreground: 10 54% 22%;
 
-    --primary: 200 45% 60%;
-    --primary-foreground: 50 15% 96%;
+    --primary: 19 81% 34%;
+    --primary-foreground: 25 15% 85%;
 
-    --secondary: 50 25% 88%;
-    --secondary-foreground: 210 20% 25%;
+    --secondary: 35 25% 75%;
+    --secondary-foreground: 10 54% 22%;
 
-    --muted: 45 20% 92%;
-    --muted-foreground: 210 15% 55%;
+    --muted: 30 18% 80%;
+    --muted-foreground: 15 40% 35%;
 
-    --accent: 195 35% 85%;
-    --accent-foreground: 210 20% 25%;
+    --accent: 40 30% 70%;
+    --accent-foreground: 10 54% 22%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 50 15% 96%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 25 15% 85%;
 
-    --border: 45 20% 88%;
-    --input: 45 20% 88%;
-    --ring: 200 45% 70%;
+    --border: 30 20% 75%;
+    --input: 30 20% 75%;
+    --ring: 19 81% 45%;
 
-    /* Custom beachy theme colors */
-    --colour-1: 200 45% 70%;
-    --colour-2: 50 55% 85%;
-    --colour-3: 195 30% 80%;
-    --colour-white: 0 0% 98%;
-    --colour-grey: 50 40% 85%;
+    /* Custom earthy boho theme colors */
+    --colour-1: 19 81% 34%;
+    --colour-2: 40 40% 75%;
+    --colour-3: 35 35% 65%;
+    --colour-white: 25 15% 85%;
+    --colour-grey: 30 25% 70%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 50 15% 98%;
+    --sidebar-background: 25 15% 85%;
 
-    --sidebar-foreground: 210 20% 26%;
+    --sidebar-foreground: 10 54% 22%;
 
-    --sidebar-primary: 200 45% 70%;
+    --sidebar-primary: 19 81% 34%;
 
-    --sidebar-primary-foreground: 50 15% 96%;
+    --sidebar-primary-foreground: 25 15% 85%;
 
-    --sidebar-accent: 50 15% 95%;
+    --sidebar-accent: 35 20% 80%;
 
-    --sidebar-accent-foreground: 210 20% 25%;
+    --sidebar-accent-foreground: 10 54% 22%;
 
-    --sidebar-border: 45 20% 90%;
+    --sidebar-border: 30 20% 75%;
 
-    --sidebar-ring: 200 45% 70%;
+    --sidebar-ring: 19 81% 45%;
   }
 
   .dark {
-    --background: 210 25% 8%;
-    --foreground: 50 20% 95%;
+    --background: 15 25% 15%;
+    --foreground: 25 15% 85%;
 
-    --card: 210 25% 10%;
-    --card-foreground: 50 20% 95%;
+    --card: 15 20% 18%;
+    --card-foreground: 25 15% 85%;
 
-    --popover: 210 25% 10%;
-    --popover-foreground: 50 20% 95%;
+    --popover: 15 20% 18%;
+    --popover-foreground: 25 15% 85%;
 
-    --primary: 200 50% 65%;
-    --primary-foreground: 210 25% 10%;
+    --primary: 40 60% 55%;
+    --primary-foreground: 15 25% 15%;
 
-    --secondary: 210 20% 15%;
-    --secondary-foreground: 50 20% 95%;
+    --secondary: 20 15% 25%;
+    --secondary-foreground: 25 15% 85%;
 
-    --muted: 210 20% 15%;
-    --muted-foreground: 210 15% 65%;
+    --muted: 18 15% 22%;
+    --muted-foreground: 30 25% 65%;
 
-    --accent: 200 30% 20%;
-    --accent-foreground: 50 20% 95%;
+    --accent: 35 25% 30%;
+    --accent-foreground: 25 15% 85%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 50 20% 95%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 25 15% 85%;
 
-    --border: 210 20% 15%;
-    --input: 210 20% 15%;
-    --ring: 200 50% 65%;
+    --border: 18 15% 25%;
+    --input: 18 15% 25%;
+    --ring: 40 60% 55%;
 
-    /* Dark mode beachy colors */
-    --colour-1: 200 50% 65%;
-    --colour-2: 50 30% 70%;
-    --colour-3: 195 25% 60%;
-    --colour-white: 210 25% 12%;
-    --colour-grey: 50 30% 70%;
+    /* Dark mode earthy boho colors */
+    --colour-1: 40 60% 55%;
+    --colour-2: 35 40% 65%;
+    --colour-3: 30 35% 50%;
+    --colour-white: 15 25% 15%;
+    --colour-grey: 30 25% 60%;
 
-    --sidebar-background: 210 25% 8%;
-    --sidebar-foreground: 50 20% 90%;
-    --sidebar-primary: 200 50% 65%;
-    --sidebar-primary-foreground: 210 25% 8%;
-    --sidebar-accent: 210 20% 12%;
-    --sidebar-accent-foreground: 50 20% 90%;
-    --sidebar-border: 210 20% 12%;
-    --sidebar-ring: 200 50% 65%;
+    --sidebar-background: 15 25% 15%;
+    --sidebar-foreground: 25 15% 85%;
+    --sidebar-primary: 40 60% 55%;
+    --sidebar-primary-foreground: 15 25% 15%;
+    --sidebar-accent: 20 15% 20%;
+    --sidebar-accent-foreground: 25 15% 85%;
+    --sidebar-border: 18 15% 22%;
+    --sidebar-ring: 40 60% 55%;
   }
 }
 

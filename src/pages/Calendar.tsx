@@ -198,7 +198,7 @@ const Calendar = () => {
                   Secure Access
                 </h3>
                 <p className="font-sans text-sm text-muted-foreground">
-                  Password-protected professional portal for authorized users
+                  Password-protected professional portal for Authorised users
                   only
                 </p>
               </CardContent>
@@ -238,7 +238,7 @@ const Calendar = () => {
       </section>
 
       {/* Booking Form */}
-      <section className="pt-24 pb-16 px-4 bg-colour-1 relative">
+      <section className="pt-24 pb-16 px-4 bg-foreground relative">
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
             viewBox="0 0 1200 120"

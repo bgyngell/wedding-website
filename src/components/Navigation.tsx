@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Music, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -13,14 +13,15 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-colour-1 border-b border-border sticky top-0 z-50">
+    <nav className="bg-foreground sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Music className="h-8 w-8 text-foreground" />
-            <span className="font-serif text-xl font-semibold text-foreground">
-              Robbie Gyngell
-            </span>
+            <img
+              src="/Robbie_Logo_DarkBG.png"
+              alt="Robbie Gyngell Logo"
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -29,9 +30,9 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`font-sans font-medium transition-colors hover:text-foreground ${
+                className={`font-sans font-medium transition-colors hover:text-colour-3 ${
                   location.pathname === item.path
-                    ? "text-foreground"
+                    ? "text-colour-3"
                     : "text-primary-foreground"
                 }`}
               >
@@ -46,9 +47,9 @@ const Navigation = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X className="h-6 w-6 text-colour-3" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu className="h-6 w-6 text-colour-3" />
             )}
           </button>
         </div>
@@ -60,9 +61,9 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block py-2 font-sans font-medium transition-colors hover:text-primary ${
+                className={`block py-2 font-sans font-medium transition-colors hover:text-colour-3 ${
                   location.pathname === item.path
-                    ? "text-foreground"
+                    ? "text-colour-3"
                     : "text-primary-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}

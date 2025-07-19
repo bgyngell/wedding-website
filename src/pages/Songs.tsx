@@ -188,21 +188,21 @@ const Songs = () => {
       id: "26",
       title: "Love Story",
       artist: "Taylor Swift",
-      category: "Pop Favorites",
+      category: "Pop Favourites",
       duration: "3:55",
     },
     {
       id: "27",
       title: "Someone Like You",
       artist: "Adele",
-      category: "Pop Favorites",
+      category: "Pop Favourites",
       duration: "4:45",
     },
     {
       id: "28",
       title: "Stay With Me",
       artist: "Sam Smith",
-      category: "Pop Favorites",
+      category: "Pop Favourites",
       duration: "2:52",
     },
     {
@@ -325,7 +325,7 @@ const Songs = () => {
             Song Repertoire
           </h1>
           <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore my extensive collection of wedding favorites. From romantic
+            Explore my extensive collection of wedding Favourites. From romantic
             ballads to dance floor anthems, find the perfect soundtrack for your
             special day.
           </p>
@@ -447,7 +447,7 @@ const Songs = () => {
       </section>
 
       {/* Booking Form */}
-      <section className="pt-24 pb-16 px-4 bg-colour-1 relative">
+      <section className="pt-24 pb-16 px-4 bg-foreground relative">
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
             viewBox="0 0 1200 120"
