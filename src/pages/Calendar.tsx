@@ -242,9 +242,8 @@ const Calendar = () => {
                   How much setup time is required?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Setup takes 45-60 minutes for standard performances, or 90
-                  minutes for PA systems and complex logistics. Sound checks are
-                  included in setup time. Arrival times are coordinated with
+                  Setup takes ~30 minutes for standard performances including PA
+                  equipment and sound check. Arrival times are coordinated with
                   venue access.
                 </AccordionContent>
               </AccordionItem>
@@ -267,10 +266,11 @@ const Calendar = () => {
                   What equipment and services are included?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Equipment includes PA speakers, Vox AV60 amp, microphone,
-                  Tanglewood acoustic guitar, and a range of electric guitars
-                  (Epiphone, Fender, Revolta). Services are as outlined in the
-                  booking packages. All equipment is professional-grade.
+                  Equipment includes PA speakers, DJ decks, Macbook laptop, Vox
+                  AV60 amp, microphone, Tanglewood acoustic guitar, and a range
+                  of electric guitars (Epiphone, Fender, Revolta). Services are
+                  as outlined in the booking packages. All equipment is
+                  professional-grade.
                 </AccordionContent>
               </AccordionItem>
 
@@ -294,8 +294,8 @@ const Calendar = () => {
                 <AccordionContent className="font-sans text-muted-foreground">
                   We're happy to learn a number of songs as outlined in the
                   package options, and open to learning additional songs upon
-                  request and review. The repertoire spans classical,
-                  contemporary, jazz standards, and popular music.
+                  request and review. The repertoire spans pop, contemporary,
+                  indie, folk, rock, soul, country and more.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
