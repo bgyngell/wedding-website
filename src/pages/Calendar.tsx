@@ -207,9 +207,9 @@ const Calendar = () => {
                   What are the floor space requirements?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  A minimum of 3m x 2m flat floor space is required for standard
-                  performances. Extended setups with PA systems need 4m x 3m.
-                  The area must be level and accessible for equipment transport.
+                  A minimum of 2m x 2m flat floor space is required for
+                  performances. The area must be level and accessible for
+                  equipment transport.
                 </AccordionContent>
               </AccordionItem>
 
@@ -218,10 +218,10 @@ const Calendar = () => {
                   What power and electrical requirements are needed?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Standard 240V power access within 10 meters of the performance
-                  area is required. Larger PA setups may need two separate
-                  circuits. All equipment is professionally maintained and
-                  electrically tested.
+                  One power point is sufficient for acoustic performances. DJ
+                  and PA setups require two power points to prevent overloading
+                  a single circuit. All equipment is professionally maintained
+                  and electrically tested.
                 </AccordionContent>
               </AccordionItem>
 
@@ -230,10 +230,10 @@ const Calendar = () => {
                   Is shelter required for outdoor events?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Adequate shelter from rain and direct sunlight is essential
-                  for outdoor performances. A marquee, gazebo, or covered area
-                  with wind protection is required for equipment and acoustic
-                  quality.
+                  Shelter is essential for outdoor performances to protect
+                  equipment and maintain acoustic quality. A marquee, gazebo, or
+                  covered area with wind protection is required. We can organize
+                  our own gazebo if needed (potential additional cost).
                 </AccordionContent>
               </AccordionItem>
 
@@ -254,10 +254,11 @@ const Calendar = () => {
                   What break and refreshment arrangements are needed?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  A 15-20 minute break is appreciated for performances over 90
-                  minutes. Water and light refreshments are welcomed but not
-                  required. A quiet area for instrument storage is helpful for
-                  full-day events.
+                  Break arrangements are very flexible and open for discussion
+                  based on what the couple prefers. We're experienced with
+                  playing for extended periods and can accommodate various
+                  scheduling preferences. Water and light refreshments are
+                  welcomed but not required.
                 </AccordionContent>
               </AccordionItem>
 
@@ -266,10 +267,10 @@ const Calendar = () => {
                   What equipment and services are included?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Standard packages include classical guitar, amplification,
-                  music stands, and cables. Optional additions: wireless
-                  microphone, professional PA system, and mixing capabilities.
-                  All equipment is professional-grade.
+                  Equipment includes PA speakers, Vox AV60 amp, microphone,
+                  Tanglewood acoustic guitar, and a range of electric guitars
+                  (Epiphone, Fender, Revolta). Services are as outlined in the
+                  booking packages. All equipment is professional-grade.
                 </AccordionContent>
               </AccordionItem>
 
@@ -278,9 +279,11 @@ const Calendar = () => {
                   How far in advance should bookings be made?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Bookings are recommended 12-18 months in advance for peak
-                  wedding season (September-May). This secures preferred dates
-                  and allows time for planning. A deposit confirms the booking.
+                  Bookings are recommended at least 3 months in advance to
+                  secure preferred dates and allow time for planning. However,
+                  we can be flexible with later bookings and accommodate
+                  last-minute requests when possible. A deposit confirms the
+                  booking.
                 </AccordionContent>
               </AccordionItem>
 
@@ -289,10 +292,10 @@ const Calendar = () => {
                   Can specific songs be learned for events?
                 </AccordionTrigger>
                 <AccordionContent className="font-sans text-muted-foreground">
-                  Special song requests are accommodated with 6-8 weeks notice
-                  for proper arrangement and rehearsal. The repertoire spans
-                  classical, contemporary, jazz standards, and popular music
-                  arranged for classical guitar.
+                  We're happy to learn a number of songs as outlined in the
+                  package options, and open to learning additional songs upon
+                  request and review. The repertoire spans classical,
+                  contemporary, jazz standards, and popular music.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
