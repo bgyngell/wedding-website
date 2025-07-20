@@ -1,27 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robbie Gyngell - Wedding Musician</title>
-    <meta name="description" content="Professional wedding musician offering solo guitar & vocals, DJ sets, and MC services. Creating magical moments for your special day." />
+    <meta
+      name="description"
+      content="Professional wedding musician offering solo guitar & vocals, DJ sets, and MC services. Creating magical moments for your special day."
+    />
     <meta name="author" content="Robbie Gyngell" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <meta property="og:title" content="Robbie Gyngell - Wedding Musician" />
-    <meta property="og:description" content="Professional wedding musician offering solo guitar & vocals, DJ sets, and MC services. Creating magical moments for your special day." />
+    <meta
+      property="og:description"
+      content="Professional wedding musician offering solo guitar & vocals, DJ sets, and MC services. Creating magical moments for your special day."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- Hidden Netlify form to enable form detection during build -->
+    <form name="booking" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="date" name="eventDate" />
+      <textarea name="description"></textarea>
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

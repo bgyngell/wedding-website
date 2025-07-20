@@ -17,24 +17,42 @@ const BookingForm = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // For now, just show a success message
-    // Email integration will be added later
-    toast({
-      title: "Booking Request Sent!",
-      description:
-        "Thank you for your inquiry. I'll get back to you within 24 hours.",
-    });
+    // Encode the form data for Netlify submission
+    const encodedData = new URLSearchParams({
+      "form-name": "booking",
+      ...formData,
+    }).toString();
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      eventDate: "",
-      description: "",
-    });
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodedData,
+      });
+
+      toast({
+        title: "Booking Request Sent!",
+        description:
+          "Thank you for your inquiry. I'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        eventDate: "",
+        description: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+      });
+    }
   };
 
   const handleChange = (
@@ -58,7 +76,18 @@ const BookingForm = () => {
         </p>
       </CardHeader>
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          name="booking"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+          className="space-y-4"
+        >
+          {/* Netlify needs this hidden input to map the submission */}
+          <input type="hidden" name="form-name" value="booking" />
+          {/* Honeypot field for spam bots */}
+          <input type="hidden" name="bot-field" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label
