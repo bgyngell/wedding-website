@@ -128,6 +128,13 @@ const Calendar = () => {
                 frameBorder="0"
                 scrolling="no"
               ></iframe>
+              <div className="p-4 bg-muted/50 border-t">
+                <p className="font-sans text-sm text-muted-foreground text-center">
+                  <strong>Please note:</strong> Available dates shown on this
+                  calendar do not guarantee availability. All bookings must be
+                  confirmed through direct contact and formal booking process.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
