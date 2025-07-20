@@ -109,38 +109,15 @@ const Calendar = () => {
                 platform coming soon.
               </p>
             </CardHeader>
-            <CardContent className="p-8">
-              <div className="bg-muted rounded-lg p-12 text-center">
-                <CalendarIcon className="h-24 w-24 text-primary mx-auto mb-6" />
-                <h3 className="font-serif text-2xl text-foreground mb-4">
-                  Calendar Integration Placeholder
-                </h3>
-                <p className="font-sans text-muted-foreground mb-6 max-w-md mx-auto">
-                  This space will display a live calendar widget showing
-                  Robbie's availability, allowing you to book appointments and
-                  coordinate wedding dates directly.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
-                  <div className="bg-card p-4 rounded-lg">
-                    <CalendarIcon className="h-6 w-6 text-primary mx-auto mb-2" />
-                    <p className="font-sans text-sm font-medium">
-                      Real-time Availability
-                    </p>
-                  </div>
-                  <div className="bg-card p-4 rounded-lg">
-                    <Clock className="h-6 w-6 text-primary mx-auto mb-2" />
-                    <p className="font-sans text-sm font-medium">
-                      Instant Booking
-                    </p>
-                  </div>
-                  <div className="bg-card p-4 rounded-lg">
-                    <Users className="h-6 w-6 text-primary mx-auto mb-2" />
-                    <p className="font-sans text-sm font-medium">
-                      Client Coordination
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <CardContent className="p-0">
+              <iframe
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Australia%2FSydney&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=MWM2YTc5NWEzODIyNzhmMmRiMjNhNzMwM2MzNzAwYzQzN2U0YzMzOWIxNWFlYTA2N2E1ZDkxZTg0ZjRkZDJjYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E8E2DB"
+                style={{ borderWidth: 0 }}
+                width="100%"
+                height="600"
+                frameBorder="0"
+                scrolling="no"
+              ></iframe>
             </CardContent>
           </Card>
         </div>
