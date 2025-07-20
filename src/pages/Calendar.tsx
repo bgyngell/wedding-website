@@ -11,6 +11,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import BookingForm from "@/components/BookingForm";
 
 const Calendar = () => {
@@ -83,7 +89,7 @@ const Calendar = () => {
       <section className="bg-colour-2 pt-16 pb-12 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Booking Calendar
+            Planner Portal
           </h1>
           <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
             Professional calendar access for wedding planners and booking
@@ -112,10 +118,6 @@ const Calendar = () => {
               <CardTitle className="font-serif text-3xl text-foreground mb-4">
                 Live Availability Calendar
               </CardTitle>
-              <p className="font-sans text-muted-foreground">
-                Integration with Calendly, Acuity Scheduling, or similar booking
-                platform coming soon.
-              </p>
             </CardHeader>
             <CardContent className="p-0">
               <iframe
@@ -191,32 +193,109 @@ const Calendar = () => {
         </div>
       </section>
 
-      {/* Contact Information */}
+      {/* FAQ Section */}
       <section className="py-16 px-4 bg-colour-2">
         <div className="container mx-auto">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-3xl text-foreground mb-6">
-              Professional Booking Support
-            </h2>
-            <p className="font-sans text-muted-foreground mb-8">
-              For immediate assistance with booking coordination, contract
-              details, or special arrangement discussions, please don't hesitate
-              to reach out directly.
-            </p>
-            <div className="space-y-4 font-sans">
-              <p className="text-muted-foreground">
-                <strong>Direct Line:</strong> Available for wedding planners and
-                agents
-              </p>
-              <p className="text-muted-foreground">
-                <strong>Response Time:</strong> Within 2 hours during business
-                hours
-              </p>
-              <p className="text-muted-foreground">
-                <strong>Booking Window:</strong> 12-18 months advance booking
-                recommended
-              </p>
-            </div>
+          <h2 className="font-serif text-3xl text-center text-foreground mb-12">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="space-requirements">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  What are the floor space requirements?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  A minimum of 3m x 2m flat floor space is required for standard
+                  performances. Extended setups with PA systems need 4m x 3m.
+                  The area must be level and accessible for equipment transport.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="power-requirements">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  What power and electrical requirements are needed?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  Standard 240V power access within 10 meters of the performance
+                  area is required. Larger PA setups may need two separate
+                  circuits. All equipment is professionally maintained and
+                  electrically tested.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="shelter-weather">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  Is shelter required for outdoor events?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  Adequate shelter from rain and direct sunlight is essential
+                  for outdoor performances. A marquee, gazebo, or covered area
+                  with wind protection is required for equipment and acoustic
+                  quality.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="setup-time">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  How much setup time is required?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  Setup takes 45-60 minutes for standard performances, or 90
+                  minutes for PA systems and complex logistics. Sound checks are
+                  included in setup time. Arrival times are coordinated with
+                  venue access.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="break-requirements">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  What break and refreshment arrangements are needed?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  A 15-20 minute break is appreciated for performances over 90
+                  minutes. Water and light refreshments are welcomed but not
+                  required. A quiet area for instrument storage is helpful for
+                  full-day events.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="equipment-included">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  What equipment and services are included?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  Standard packages include classical guitar, amplification,
+                  music stands, and cables. Optional additions: wireless
+                  microphone, professional PA system, and mixing capabilities.
+                  All equipment is professional-grade.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="booking-timeline">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  How far in advance should bookings be made?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  Bookings are recommended 12-18 months in advance for peak
+                  wedding season (September-May). This secures preferred dates
+                  and allows time for planning. A deposit confirms the booking.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="song-customization">
+                <AccordionTrigger className="font-serif text-lg text-left">
+                  Can specific songs be learned for events?
+                </AccordionTrigger>
+                <AccordionContent className="font-sans text-muted-foreground">
+                  Special song requests are accommodated with 6-8 weeks notice
+                  for proper arrangement and rehearsal. The repertoire spans
+                  classical, contemporary, jazz standards, and popular music
+                  arranged for classical guitar.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
