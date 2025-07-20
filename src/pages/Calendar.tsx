@@ -43,46 +43,6 @@ const Calendar = () => {
     }
   };
 
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-colour-2 flex items-center justify-center px-4">
-        <Card className="w-full max-w-md">
-          <CardHeader className="text-center">
-            <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
-            <CardTitle className="font-serif text-2xl">
-              Calendar Access
-            </CardTitle>
-            <p className="font-sans text-muted-foreground">
-              This calendar is exclusively for wedding planners and booking
-              agents. Please enter the access password to continue.
-            </p>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleLogin} className="space-y-4">
-              <div>
-                <Input
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className={error ? "border-destructive" : ""}
-                />
-                {error && (
-                  <p className="text-destructive text-sm mt-1 font-sans">
-                    {error}
-                  </p>
-                )}
-              </div>
-              <Button type="submit" className="w-full font-sans">
-                Access Calendar
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -98,7 +58,7 @@ const Calendar = () => {
         </div>
       </section>
 
-      {/* Calendar Integration Placeholder */}
+      {/* Calendar Integration */}
       <section className="pb-16 pt-24 px-4 relative">
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
@@ -120,21 +80,60 @@ const Calendar = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-0">
-              <iframe
-                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Australia%2FSydney&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=MWM2YTc5NWEzODIyNzhmMmRiMjNhNzMwM2MzNzAwYzQzN2U0YzMzOWIxNWFlYTA2N2E1ZDkxZTg0ZjRkZDJjYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E8E2DB"
-                style={{ borderWidth: 0 }}
-                width="100%"
-                height="600"
-                frameBorder="0"
-                scrolling="no"
-              ></iframe>
-              <div className="p-4 bg-muted/50 border-t">
-                <p className="font-sans text-sm text-muted-foreground text-center">
-                  <strong>Please note:</strong> Available dates shown on this
-                  calendar do not guarantee availability. All bookings must be
-                  confirmed through direct contact and formal booking process.
-                </p>
-              </div>
+              {!isAuthenticated ? (
+                <div className="p-8 flex flex-col items-center justify-center min-h-[400px]">
+                  <Lock className="h-16 w-16 text-primary mb-6" />
+                  <h3 className="font-serif text-2xl text-foreground mb-4">
+                    Calendar Access Required
+                  </h3>
+                  <p className="font-sans text-muted-foreground text-center mb-8 max-w-md">
+                    This calendar is exclusively for wedding planners and
+                    booking agents. Please enter the access password to view
+                    availability.
+                  </p>
+                  <form
+                    onSubmit={handleLogin}
+                    className="space-y-4 w-full max-w-sm"
+                  >
+                    <div>
+                      <Input
+                        type="password"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className={error ? "border-destructive" : ""}
+                      />
+                      {error && (
+                        <p className="text-destructive text-sm mt-1 font-sans">
+                          {error}
+                        </p>
+                      )}
+                    </div>
+                    <Button type="submit" className="w-full font-sans">
+                      Access Calendar
+                    </Button>
+                  </form>
+                </div>
+              ) : (
+                <>
+                  <iframe
+                    src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Australia%2FSydney&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=MWM2YTc5NWEzODIyNzhmMmRiMjNhNzMwM2MzNzAwYzQzN2U0YzMzOWIxNWFlYTA2N2E1ZDkxZTg0ZjRkZDJjYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E8E2DB"
+                    style={{ borderWidth: 0 }}
+                    width="100%"
+                    height="600"
+                    frameBorder="0"
+                    scrolling="no"
+                  ></iframe>
+                  <div className="p-4 bg-muted/50 border-t">
+                    <p className="font-sans text-sm text-muted-foreground text-center">
+                      <strong>Please note:</strong> Available dates shown on
+                      this calendar do not guarantee availability. All bookings
+                      must be confirmed through direct contact and formal
+                      booking process.
+                    </p>
+                  </div>
+                </>
+              )}
             </CardContent>
           </Card>
         </div>
