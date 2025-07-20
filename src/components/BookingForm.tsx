@@ -71,8 +71,7 @@ const BookingForm = () => {
           Book Your Perfect Day
         </CardTitle>
         <p className="text-muted-foreground font-sans">
-          Let's create magical moments together. Tell me about your special
-          event.
+          Get in touch to discuss your event and confirm availability.
         </p>
       </CardHeader>
       <CardContent>

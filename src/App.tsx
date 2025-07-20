@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Songs from "./pages/Songs";
 import Calendar from "./pages/Calendar";
+import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/songs" element={<Songs />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
