@@ -47,7 +47,9 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Wedding Singer & DJ in Sydney | Robbie Gyngell</title>
+        <title>
+          Robbie Gyngell | Wedding Singer & DJ in Sydney & Illawarra
+        </title>
         <meta
           name="description"
           content="Live acoustic guitar, vocals, DJ and MC services for weddings in Sydney & Illawarra."

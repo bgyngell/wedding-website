@@ -47,7 +47,7 @@ const Calendar = () => {
   return (
     <>
       <Helmet>
-        <title>Planner Portal – Availability Calendar | Robbie Gyngell</title>
+        <title>Planner Portal - Availability Calendar | Robbie Gyngell</title>
         <meta
           name="description"
           content="Wedding planners and booking agents can view live availability and coordinate dates in the planner portal."

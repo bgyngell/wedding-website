@@ -19,7 +19,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
             <img
-              src="/Robbie_Logo_DarkBG.png"
+              src="/Robbie_Logo_DarkBG_Small.png"
               alt="Robbie Gyngell Logo"
               className="h-12 w-auto"
             />
