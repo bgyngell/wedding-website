@@ -37,12 +37,16 @@
 
   <body>
     <div id="root"></div>
-    <!-- Hidden Netlify form to enable form detection during build -->
+    <!-- Hidden Netlify forms to enable form detection during build -->
     <form name="booking" netlify netlify-honeypot="bot-field" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="date" name="eventDate" />
       <textarea name="description"></textarea>
+    </form>
+    <form name="pricing-access" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
     </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>

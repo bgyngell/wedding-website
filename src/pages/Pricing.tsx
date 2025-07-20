@@ -1,9 +1,89 @@
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Music, Clock, Heart, Star, Mic, Volume2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Music,
+  Clock,
+  Heart,
+  Star,
+  Mic,
+  Volume2,
+  User,
+  Mail,
+} from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 import BookingForm from "@/components/BookingForm";
 
 const Pricing = () => {
+  const [hasSubmittedForm, setHasSubmittedForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    // Check if user has already submitted the form in this session
+    const submitted = sessionStorage.getItem("pricing-form-submitted");
+    if (submitted === "true") {
+      setHasSubmittedForm(true);
+    }
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Encode the form data for Netlify submission
+    const encodedData = new URLSearchParams({
+      "form-name": "pricing-access",
+      ...formData,
+    }).toString();
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodedData,
+      });
+
+      setHasSubmittedForm(true);
+      sessionStorage.setItem("pricing-form-submitted", "true");
+
+      toast({
+        title: "Access Granted!",
+        description: "Thank you! You can now view our pricing packages.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const packages = [
     {
       id: 1,
@@ -127,61 +207,151 @@ const Pricing = () => {
         </div>
 
         <div className="container mx-auto mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg) => (
-              <Card
-                key={pkg.id}
-                className={`relative ${pkg.color} transition-all duration-300 hover:bg-secondary hover:shadow-lg`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-primary text-primary-foreground px-3 py-1 pointer-events-none">
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                {pkg.premium && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-foreground text-background px-3 py-1 pointer-events-none">
-                      Premium
-                    </Badge>
-                  </div>
-                )}
-
-                <CardHeader className="text-center pb-4">
-                  <pkg.icon
-                    className={`h-12 w-12 ${pkg.accentColor} mx-auto mb-4`}
+          {!hasSubmittedForm ? (
+            <Card className="max-w-2xl mx-auto">
+              <CardHeader className="text-center">
+                <CardTitle className="font-serif text-3xl text-foreground mb-4">
+                  View Pricing Information
+                </CardTitle>
+                <p className="font-sans text-muted-foreground max-w-md mx-auto">
+                  To view our wedding music package pricing, please provide your
+                  contact details below.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <form
+                  name="pricing-access"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
+                  {/* Netlify needs this hidden input to map the submission */}
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="pricing-access"
                   />
-                  <CardTitle className="font-serif text-xl font-semibold text-foreground mb-2">
-                    {pkg.name}
-                  </CardTitle>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Clock className={`h-4 w-4 ${pkg.accentColor}`} />
-                    <span className="font-sans text-sm text-muted-foreground">
-                      {pkg.duration}
-                    </span>
-                  </div>
-                  <div className={`text-3xl font-bold ${pkg.accentColor}`}>
-                    {pkg.price}
-                  </div>
-                </CardHeader>
+                  {/* Honeypot field for spam bots */}
+                  <input type="hidden" name="bot-field" />
 
-                <CardContent>
-                  <ul className="space-y-3">
-                    {pkg.features.map((feature, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start text-sm font-sans text-muted-foreground"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="name"
+                        className="flex items-center gap-2 font-sans"
                       >
-                        <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                        <User className="h-4 w-4" />
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your full name"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="email"
+                        className="flex items-center gap-2 font-sans"
+                      >
+                        <Mail className="h-4 w-4" />
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <Button
+                    type="submit"
+                    className="w-full font-sans"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Submitting..." : "View Pricing Packages"}
+                  </Button>
+
+                  <p className="text-xs text-muted-foreground text-center font-sans">
+                    Your data will be handled in accordance with our{" "}
+                    <Link
+                      to="/privacy"
+                      className="text-primary hover:underline"
+                    >
+                      Privacy Policy
+                    </Link>
+                    .
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {packages.map((pkg) => (
+                <Card
+                  key={pkg.id}
+                  className={`relative ${pkg.color} transition-all duration-300 hover:bg-secondary hover:shadow-lg`}
+                >
+                  {pkg.popular && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-primary text-primary-foreground px-3 py-1 pointer-events-none">
+                        Most Popular
+                      </Badge>
+                    </div>
+                  )}
+                  {pkg.premium && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-foreground text-background px-3 py-1 pointer-events-none">
+                        Premium
+                      </Badge>
+                    </div>
+                  )}
+
+                  <CardHeader className="text-center pb-4">
+                    <pkg.icon
+                      className={`h-12 w-12 ${pkg.accentColor} mx-auto mb-4`}
+                    />
+                    <CardTitle className="font-serif text-xl font-semibold text-foreground mb-2">
+                      {pkg.name}
+                    </CardTitle>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <Clock className={`h-4 w-4 ${pkg.accentColor}`} />
+                      <span className="font-sans text-sm text-muted-foreground">
+                        {pkg.duration}
+                      </span>
+                    </div>
+                    <div className={`text-3xl font-bold ${pkg.accentColor}`}>
+                      {pkg.price}
+                    </div>
+                  </CardHeader>
+
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {pkg.features.map((feature, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start text-sm font-sans text-muted-foreground"
+                        >
+                          <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
