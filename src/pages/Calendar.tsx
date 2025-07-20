@@ -20,7 +20,7 @@ const Calendar = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "Test1234") {
+    if (password === import.meta.env.VITE_CALENDAR_PASSWORD) {
       setIsAuthenticated(true);
       sessionStorage.setItem("calendar-authenticated", "true");
       setError("");
