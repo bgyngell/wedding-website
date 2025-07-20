@@ -139,7 +139,7 @@ const Calendar = () => {
                   <>
                     <iframe
                       title="Live availability calendar"
-                      src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Australia%2FSydney&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=MWM2YTc5NWEzODIyNzhmMmRiMjNhNzMwM2MzNzAwYzQzN2U0YzMzOWIxNWFlYTA2N2E1ZDkxZTg0ZjRkZDJjYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23E8E2DB"
+                      src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Australia%2FSydney&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&showTz=0&src=cm9iYmllLmcubXVzaWNzZXJ2aWNlc0BnbWFpbC5jb20&color=%23E8E2DB"
                       style={{ borderWidth: 0 }}
                       width="100%"
                       height="600"
