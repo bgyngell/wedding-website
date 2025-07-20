@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
-import { Lock, Calendar as CalendarIcon, Users, Clock } from "lucide-react";
+import {
+  Lock,
+  Calendar as CalendarIcon,
+  Users,
+  Clock,
+  Phone,
+  Settings,
+  Package,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -123,60 +131,59 @@ const Calendar = () => {
         </div>
       </section>
 
-      {/* Professional Features */}
+      {/* Professional Support */}
       <section className="py-16 px-4 bg-card">
         <div className="container mx-auto">
           <h2 className="font-serif text-3xl text-center text-foreground mb-12">
-            Professional Booking Features
+            Professional Booking Support
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="text-center">
               <CardContent className="p-6">
-                <CalendarIcon className="h-8 w-8 text-primary mx-auto mb-3" />
-                <h3 className="font-serif text-lg font-semibold mb-2">
-                  Live Availability
-                </h3>
-                <p className="font-sans text-sm text-muted-foreground">
-                  Real-time calendar showing available dates and time slots
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                <h3 className="font-serif text-lg font-semibold mb-2">
-                  Instant Confirmation
-                </h3>
-                <p className="font-sans text-sm text-muted-foreground">
-                  Immediate booking confirmation with automated email receipts
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="p-6">
                 <Users className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-serif text-lg font-semibold mb-2">
-                  Client Management
+                  Planner Collaboration
                 </h3>
                 <p className="font-sans text-sm text-muted-foreground">
-                  Streamlined communication between planners, agents, and
-                  clients
+                  Seamless, reliable co-ordination with planners and other
+                  vendors
                 </p>
               </CardContent>
             </Card>
 
             <Card className="text-center">
               <CardContent className="p-6">
-                <Lock className="h-8 w-8 text-primary mx-auto mb-3" />
+                <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-serif text-lg font-semibold mb-2">
-                  Secure Access
+                  Responsive Communication
                 </h3>
                 <p className="font-sans text-sm text-muted-foreground">
-                  Password-protected professional portal for Authorised users
-                  only
+                  Correspondence via email, phone and SMS for quick responses
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <Settings className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h3 className="font-serif text-lg font-semibold mb-2">
+                  Flexible Logistics
+                </h3>
+                <p className="font-sans text-sm text-muted-foreground">
+                  Floor space footprint configurable for almost any venue
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardContent className="p-6">
+                <Package className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h3 className="font-serif text-lg font-semibold mb-2">
+                  One Stop Shop
+                </h3>
+                <p className="font-sans text-sm text-muted-foreground">
+                  Options to include PA, microphone, mixer and more
                 </p>
               </CardContent>
             </Card>
