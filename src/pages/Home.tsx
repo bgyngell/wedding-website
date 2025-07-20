@@ -56,7 +56,15 @@ const Home = () => {
             Professional guitar, vocals, DJ sets, and MC services for Sydney and
             the Illawarra
           </p>
-          <Button size="lg" className="font-sans text-lg px-8 py-3">
+          <Button
+            size="lg"
+            className="font-sans text-lg px-8 py-3"
+            onClick={() => {
+              document.getElementById("booking-section")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
             Book Your Date
           </Button>
         </div>
@@ -192,7 +200,10 @@ const Home = () => {
       </section>
 
       {/* Booking Form Section */}
-      <section className="pt-24 pb-16 px-4 bg-foreground relative">
+      <section
+        id="booking-section"
+        className="pt-24 pb-16 px-4 bg-foreground relative"
+      >
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           <svg
             viewBox="0 0 1200 120"
