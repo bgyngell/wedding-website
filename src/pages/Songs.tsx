@@ -3,6 +3,7 @@ import { Play, Pause, Heart, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import BookingForm from "@/components/BookingForm";
+import { Helmet } from "react-helmet-async";
 
 const Songs = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -317,154 +318,175 @@ const Songs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <section className="bg-colour-2 pt-16 pb-8 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Song Repertoire
-          </h1>
-          <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore my extensive collection of wedding Favourites. From romantic
-            ballads to dance floor anthems, find the perfect soundtrack for your
-            special day.
-          </p>
-        </div>
-      </section>
-
-      {/* Search and Filters */}
-      <section className="pb-8 pt-24 px-4 bg-card border-b relative">
-        <div className="absolute top-0 left-0 w-full overflow-hidden">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="relative block w-full h-[60px]"
-          >
-            <path
-              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-              className="fill-colour-2"
-            ></path>
-          </svg>
-        </div>
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            <div className="flex-1 min-w-[200px] max-w-md">
-              <Input
-                placeholder="Search songs or artists..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full"
-              />
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-sans transition-colors ${
-                    selectedCategory === category
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted text-muted-foreground hover:bg-primary/20"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Song List */}
-      <section className="pt-8 pb-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredSongs.map((song) => (
-              <Card key={song.id} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-3">
-                    <button
-                      onClick={() => handlePlay(song.id)}
-                      className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors"
-                    >
-                      {playingId === song.id ? (
-                        <Pause className="h-5 w-5" />
-                      ) : (
-                        <Play className="h-5 w-5 ml-0.5" />
-                      )}
-                    </button>
-
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-serif font-semibold text-foreground truncate">
-                        {song.title}
-                      </h3>
-                      <p className="font-sans text-sm text-muted-foreground truncate">
-                        {song.artist}
-                      </p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="font-sans text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">
-                          {song.category}
-                        </span>
-                        <span className="font-sans text-xs text-muted-foreground flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          {song.duration}
-                        </span>
-                      </div>
-                    </div>
-
-                    <Heart className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {filteredSongs.length === 0 && (
-            <div className="text-center py-12">
-              <p className="font-sans text-muted-foreground">
-                No songs found matching your search criteria.
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Note about custom requests */}
-      <section className="py-8 px-4 bg-colour-2">
-        <div className="container mx-auto text-center mt-4">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
-              Don't See Your Song?
-            </h3>
-            <p className="font-sans text-muted-foreground">
-              This is just a sample of my repertoire! I'm always happy to learn
-              new songs for your special day. Include your song requests in the
-              booking form below, and I'll let you know if I can accommodate
-              them.
+    <>
+      <Helmet>
+        <title>Wedding Song List | Robbie Gyngell Repertoire</title>
+        <meta
+          name="description"
+          content="Browse an extensive repertoire of romantic ballads, classic hits, and dance floor favourites for your wedding soundtrack."
+        />
+        <link rel="canonical" href="https://robbiegyngellweddings.com/songs" />
+        <meta
+          property="og:title"
+          content="Wedding Song List | Robbie Gyngell Repertoire"
+        />
+        <meta
+          property="og:description"
+          content="Browse an extensive repertoire of romantic ballads, classic hits, and dance floor favourites for your wedding soundtrack."
+        />
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        {/* Header */}
+        <section className="bg-colour-2 pt-16 pb-8 px-4">
+          <div className="container mx-auto text-center">
+            <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Song Repertoire
+            </h1>
+            <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
+              Explore my extensive collection of wedding Favourites. From
+              romantic ballads to dance floor anthems, find the perfect
+              soundtrack for your special day.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Booking Form */}
-      <section className="pt-24 pb-16 px-4 bg-foreground relative">
-        <div className="absolute top-0 left-0 w-full overflow-hidden">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="relative block w-full h-[60px]"
-          >
-            <path
-              d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-              className="fill-colour-2"
-            ></path>
-          </svg>
-        </div>
-        <div className="container mx-auto">
-          <BookingForm />
-        </div>
-      </section>
-    </div>
+        {/* Search and Filters */}
+        <section className="pb-8 pt-24 px-4 bg-card border-b relative">
+          <div className="absolute top-0 left-0 w-full overflow-hidden">
+            <svg
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-[60px]"
+            >
+              <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                className="fill-colour-2"
+              ></path>
+            </svg>
+          </div>
+          <div className="container mx-auto">
+            <div className="flex flex-col md:flex-row gap-4 items-center">
+              <div className="flex-1 min-w-[200px] max-w-md">
+                <Input
+                  placeholder="Search songs or artists..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full"
+                />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-sans transition-colors ${
+                      selectedCategory === category
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-muted-foreground hover:bg-primary/20"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Song List */}
+        <section className="pt-8 pb-16 px-4">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredSongs.map((song) => (
+                <Card
+                  key={song.id}
+                  className="hover:shadow-md transition-shadow"
+                >
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => handlePlay(song.id)}
+                        className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors"
+                      >
+                        {playingId === song.id ? (
+                          <Pause className="h-5 w-5" />
+                        ) : (
+                          <Play className="h-5 w-5 ml-0.5" />
+                        )}
+                      </button>
+
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-serif font-semibold text-foreground truncate">
+                          {song.title}
+                        </h3>
+                        <p className="font-sans text-sm text-muted-foreground truncate">
+                          {song.artist}
+                        </p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="font-sans text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">
+                            {song.category}
+                          </span>
+                          <span className="font-sans text-xs text-muted-foreground flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
+                            {song.duration}
+                          </span>
+                        </div>
+                      </div>
+
+                      <Heart className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {filteredSongs.length === 0 && (
+              <div className="text-center py-12">
+                <p className="font-sans text-muted-foreground">
+                  No songs found matching your search criteria.
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Note about custom requests */}
+        <section className="py-8 px-4 bg-colour-2">
+          <div className="container mx-auto text-center mt-4">
+            <div className="max-w-2xl mx-auto">
+              <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">
+                Don't See Your Song?
+              </h3>
+              <p className="font-sans text-muted-foreground">
+                This is just a sample of my repertoire! I'm always happy to
+                learn new songs for your special day. Include your song requests
+                in the booking form below, and I'll let you know if I can
+                accommodate them.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Booking Form */}
+        <section className="pt-24 pb-16 px-4 bg-foreground relative">
+          <div className="absolute top-0 left-0 w-full overflow-hidden">
+            <svg
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-[60px]"
+            >
+              <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                className="fill-colour-2"
+              ></path>
+            </svg>
+          </div>
+          <div className="container mx-auto">
+            <BookingForm />
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

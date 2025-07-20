@@ -17,6 +17,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import BookingForm from "@/components/BookingForm";
+import { Helmet } from "react-helmet-async";
 
 const Pricing = () => {
   const [hasSubmittedForm, setHasSubmittedForm] = useState(false);
@@ -175,7 +176,26 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Helmet>
+        <title>Wedding Music Packages & Pricing | Robbie Gyngell</title>
+        <meta
+          name="description"
+          content="Discover ceremony, reception, DJ and MC packages with transparent pricing. Tailor-made options for weddings across Sydney and the Illawarra."
+        />
+        <link
+          rel="canonical"
+          href="https://robbiegyngellweddings.com/pricing"
+        />
+        <meta
+          property="og:title"
+          content="Wedding Music Packages & Pricing | Robbie Gyngell"
+        />
+        <meta
+          property="og:description"
+          content="Discover ceremony, reception, DJ and MC packages with transparent pricing. Tailor-made options for weddings across Sydney and the Illawarra."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-colour-2 pt-16 pb-4 px-4">
         <div className="container mx-auto text-center">
@@ -387,7 +407,7 @@ const Pricing = () => {
           <BookingForm />
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
