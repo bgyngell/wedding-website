@@ -1,21 +1,33 @@
-import { useState } from "react";
-import { Play, Pause, Heart, Clock } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Play, Pause, Heart, Clock, Music } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import BookingForm from "@/components/BookingForm";
 import { Helmet } from "react-helmet-async";
 
+interface Song {
+  id: string;
+  title: string;
+  artist: string;
+  category: string;
+  duration: string;
+  audioUrl?: string; // Optional audio preview
+}
+
 const Songs = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [playingId, setPlayingId] = useState<string | null>(null);
+  const [favorites, setFavorites] = useState<Set<string>>(new Set());
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const songs = [
+  const songs: Song[] = [
     {
       id: "1",
       title: "Perfect",
       artist: "Ed Sheeran",
       category: "Modern Romance",
       duration: "4:23",
+      audioUrl: "/audio/perfect.mp3", // Example: some songs have audio
     },
     {
       id: "2",
@@ -23,6 +35,7 @@ const Songs = () => {
       artist: "John Legend",
       category: "Modern Romance",
       duration: "4:29",
+      // No audioUrl - this song doesn't have an audio clip
     },
     {
       id: "3",
@@ -30,6 +43,7 @@ const Songs = () => {
       artist: "Ed Sheeran",
       category: "Modern Romance",
       duration: "4:41",
+      audioUrl: "/audio/thinking-out-loud.mp3",
     },
     {
       id: "4",
@@ -44,6 +58,7 @@ const Songs = () => {
       artist: "Train",
       category: "Modern Romance",
       duration: "4:18",
+      audioUrl: "/audio/marry-me.mp3",
     },
     {
       id: "6",
@@ -58,6 +73,7 @@ const Songs = () => {
       artist: "The Temptations",
       category: "Classic Soul",
       duration: "2:55",
+      audioUrl: "/audio/my-girl.mp3",
     },
     {
       id: "8",
@@ -72,6 +88,7 @@ const Songs = () => {
       artist: "The Righteous Brothers",
       category: "Classic Love",
       duration: "3:36",
+      audioUrl: "/audio/unchained-melody.mp3",
     },
     {
       id: "10",
@@ -79,6 +96,7 @@ const Songs = () => {
       artist: "Etta James",
       category: "Jazz Standards",
       duration: "3:01",
+      audioUrl: "/audio/at-last.mp3",
     },
     {
       id: "11",
@@ -86,6 +104,7 @@ const Songs = () => {
       artist: "Frank Sinatra",
       category: "Jazz Standards",
       duration: "3:21",
+      audioUrl: "/audio/the-way-you-look-tonight.mp3",
     },
     {
       id: "12",
@@ -100,6 +119,7 @@ const Songs = () => {
       artist: "Nat King Cole",
       category: "Jazz Standards",
       duration: "3:04",
+      audioUrl: "/audio/love.mp3",
     },
     {
       id: "14",
@@ -114,6 +134,7 @@ const Songs = () => {
       artist: "Lord Huron",
       category: "Folk & Acoustic",
       duration: "3:28",
+      audioUrl: "/audio/the-night-we-met.mp3",
     },
     {
       id: "16",
@@ -135,6 +156,7 @@ const Songs = () => {
       artist: "Lizzo",
       category: "Feel Good",
       duration: "2:39",
+      audioUrl: "/audio/good-as-hell.mp3",
     },
     {
       id: "19",
@@ -149,6 +171,7 @@ const Songs = () => {
       artist: "Justin Timberlake",
       category: "Feel Good",
       duration: "3:56",
+      audioUrl: "/audio/cant-stop-the-feeling.mp3",
     },
     {
       id: "21",
@@ -156,6 +179,7 @@ const Songs = () => {
       artist: "Neil Diamond",
       category: "Sing-Along",
       duration: "3:21",
+      audioUrl: "/audio/sweet-caroline.mp3",
     },
     {
       id: "22",
@@ -170,6 +194,7 @@ const Songs = () => {
       artist: "The Killers",
       category: "Sing-Along",
       duration: "3:42",
+      audioUrl: "/audio/mr-brightside.mp3",
     },
     {
       id: "24",
@@ -198,6 +223,7 @@ const Songs = () => {
       artist: "Adele",
       category: "Pop Favourites",
       duration: "4:45",
+      audioUrl: "/audio/someone-like-you.mp3",
     },
     {
       id: "28",
@@ -212,6 +238,7 @@ const Songs = () => {
       artist: "Lady Gaga & Bradley Cooper",
       category: "Movie Songs",
       duration: "3:35",
+      audioUrl: "/audio/shallow.mp3",
     },
     {
       id: "30",
@@ -233,6 +260,7 @@ const Songs = () => {
       artist: "The Weeknd",
       category: "Modern Hits",
       duration: "3:20",
+      audioUrl: "/audio/blinding-lights.mp3",
     },
     {
       id: "33",
@@ -247,6 +275,7 @@ const Songs = () => {
       artist: "Dua Lipa",
       category: "Modern Hits",
       duration: "3:23",
+      audioUrl: "/audio/levitating.mp3",
     },
     {
       id: "35",
@@ -254,6 +283,7 @@ const Songs = () => {
       artist: "The Beatles",
       category: "Timeless Classics",
       duration: "3:05",
+      audioUrl: "/audio/here-comes-the-sun.mp3",
     },
     {
       id: "36",
@@ -268,6 +298,7 @@ const Songs = () => {
       artist: "Ben E. King",
       category: "Timeless Classics",
       duration: "2:58",
+      audioUrl: "/audio/stand-by-me.mp3",
     },
     {
       id: "38",
@@ -289,6 +320,7 @@ const Songs = () => {
       artist: "Bill Withers",
       category: "Soul & R&B",
       duration: "4:15",
+      audioUrl: "/audio/lovely-day.mp3",
     },
   ];
 
@@ -307,14 +339,80 @@ const Songs = () => {
     return matchesSearch && matchesCategory;
   });
 
+  // Handle audio playback
+  useEffect(() => {
+    if (audioRef.current) {
+      const audio = audioRef.current;
+
+      const handleEnded = () => {
+        setPlayingId(null);
+      };
+
+      const handleError = () => {
+        setPlayingId(null);
+        console.error("Audio playback error");
+      };
+
+      audio.addEventListener("ended", handleEnded);
+      audio.addEventListener("error", handleError);
+
+      return () => {
+        audio.removeEventListener("ended", handleEnded);
+        audio.removeEventListener("error", handleError);
+      };
+    }
+  }, []);
+
   const handlePlay = (songId: string) => {
+    const song = songs.find((s) => s.id === songId);
+
+    if (!song?.audioUrl) {
+      return; // Can't play if no audio URL
+    }
+
     if (playingId === songId) {
+      // Pause current song
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
       setPlayingId(null);
     } else {
+      // Stop any currently playing audio
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+
+      // Start new audio
+      audioRef.current = new Audio(song.audioUrl);
+      audioRef.current.play().catch((error) => {
+        console.error("Audio playback failed:", error);
+        setPlayingId(null);
+      });
+
       setPlayingId(songId);
-      // In a real app, this would trigger audio playback
-      setTimeout(() => setPlayingId(null), 3000); // Auto-stop after 3 seconds for demo
     }
+  };
+
+  // Clean up audio when component unmounts
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  const toggleFavorite = (songId: string) => {
+    setFavorites((prev) => {
+      const newFavorites = new Set(prev);
+      if (newFavorites.has(songId)) {
+        newFavorites.delete(songId);
+      } else {
+        newFavorites.add(songId);
+      }
+      return newFavorites;
+    });
   };
 
   return (
@@ -403,17 +501,27 @@ const Songs = () => {
                   className="hover:shadow-md transition-shadow"
                 >
                   <CardContent className="p-4">
-                    <div className="flex items-center gap-3">
-                      <button
-                        onClick={() => handlePlay(song.id)}
-                        className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors"
-                      >
-                        {playingId === song.id ? (
-                          <Pause className="h-5 w-5" />
-                        ) : (
-                          <Play className="h-5 w-5 ml-0.5" />
-                        )}
-                      </button>
+                    <div className="flex items-center gap-5">
+                      {song.audioUrl ? (
+                        <button
+                          onClick={() => handlePlay(song.id)}
+                          className="flex-shrink-0 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors"
+                          title="Play preview"
+                        >
+                          {playingId === song.id ? (
+                            <Pause className="h-5 w-5" />
+                          ) : (
+                            <Play className="h-5 w-5 ml-0.5" />
+                          )}
+                        </button>
+                      ) : (
+                        <div
+                          className="flex-shrink-0 w-12 h-12 bg-muted text-muted-foreground rounded-full flex items-center justify-center"
+                          title="No preview available"
+                        >
+                          <Music className="h-5 w-5" />
+                        </div>
+                      )}
 
                       <div className="flex-1 min-w-0">
                         <h3 className="font-serif font-semibold text-foreground truncate">
@@ -426,14 +534,27 @@ const Songs = () => {
                           <span className="font-sans text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">
                             {song.category}
                           </span>
-                          <span className="font-sans text-xs text-muted-foreground flex items-center gap-1">
-                            <Clock className="h-3 w-3" />
-                            {song.duration}
-                          </span>
+                          {song.audioUrl && (
+                            <span className="font-sans text-xs text-muted-foreground flex items-center gap-1">
+                              <Clock className="h-3 w-3" />
+                              {song.duration}
+                            </span>
+                          )}
                         </div>
                       </div>
 
-                      <Heart className="h-5 w-5 text-muted-foreground hover:text-primary cursor-pointer transition-colors" />
+                      <button
+                        onClick={() => toggleFavorite(song.id)}
+                        className="flex-shrink-0 transition-colors"
+                      >
+                        <Heart
+                          className={`h-5 w-5 cursor-pointer transition-colors ${
+                            favorites.has(song.id)
+                              ? "text-red-500 fill-red-500"
+                              : "text-muted-foreground hover:text-red-500"
+                          }`}
+                        />
+                      </button>
                     </div>
                   </CardContent>
                 </Card>
