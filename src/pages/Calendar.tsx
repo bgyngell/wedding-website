@@ -41,7 +41,7 @@ const Calendar = () => {
   return (
     <>
       <Helmet>
-        <title>Planner Portal - Availability Calendar | Robbie Gyngell</title>
+        <title>Availability Calendar | Robbie Gyngell</title>
         <meta
           name="description"
           content="Wedding planners and booking agents can view live availability and coordinate dates in the planner portal."
@@ -52,7 +52,7 @@ const Calendar = () => {
         />
         <meta
           property="og:title"
-          content="Planner Portal – Availability Calendar | Robbie Gyngell"
+          content="Availability Calendar | Robbie Gyngell"
         />
         <meta
           property="og:description"
@@ -64,7 +64,7 @@ const Calendar = () => {
         <section className="bg-colour-2 pt-16 pb-12 px-4">
           <div className="container mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Planner Portal
+              Availability Calendar
             </h1>
             <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
               Professional calendar access for wedding planners and booking

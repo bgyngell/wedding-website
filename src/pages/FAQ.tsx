@@ -34,8 +34,8 @@ const FAQ = () => {
               Frequently Asked Questions
             </h1>
             <p className="font-sans text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know about booking wedding music services,
-              equipment requirements, and performance details.
+              Everything you need to know about logistics, setup requirements,
+              and performance details.
             </p>
           </div>
         </section>

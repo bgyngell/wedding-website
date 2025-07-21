@@ -200,8 +200,7 @@ const Pricing = () => {
       <section className="bg-colour-2 pt-16 pb-4 px-4">
         <div className="container mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Wedding Music
-            <span className="block text-primary">Packages</span>
+            Wedding Music Packages
           </h1>
           <p className="font-sans text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Choose the perfect musical experience for your special day. All
