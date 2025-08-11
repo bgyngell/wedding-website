@@ -27,7 +27,7 @@ const Songs = () => {
       artist: "Ed Sheeran",
       category: "Modern Romance",
       duration: "4:23",
-      audioUrl: "/audio/perfect.mp3", // Example: some songs have audio
+      // audioUrl: "/audio/perfect.mp3", // Example: some songs have audio
     },
     {
       id: "2",
@@ -35,7 +35,6 @@ const Songs = () => {
       artist: "John Legend",
       category: "Modern Romance",
       duration: "4:29",
-      // No audioUrl - this song doesn't have an audio clip
     },
     {
       id: "3",
@@ -43,7 +42,6 @@ const Songs = () => {
       artist: "Ed Sheeran",
       category: "Modern Romance",
       duration: "4:41",
-      audioUrl: "/audio/thinking-out-loud.mp3",
     },
     {
       id: "4",
@@ -58,7 +56,6 @@ const Songs = () => {
       artist: "Train",
       category: "Modern Romance",
       duration: "4:18",
-      audioUrl: "/audio/marry-me.mp3",
     },
     {
       id: "6",
@@ -73,7 +70,6 @@ const Songs = () => {
       artist: "The Temptations",
       category: "Classic Soul",
       duration: "2:55",
-      audioUrl: "/audio/my-girl.mp3",
     },
     {
       id: "8",
@@ -88,7 +84,6 @@ const Songs = () => {
       artist: "The Righteous Brothers",
       category: "Classic Love",
       duration: "3:36",
-      audioUrl: "/audio/unchained-melody.mp3",
     },
     {
       id: "10",
@@ -96,7 +91,6 @@ const Songs = () => {
       artist: "Etta James",
       category: "Jazz Standards",
       duration: "3:01",
-      audioUrl: "/audio/at-last.mp3",
     },
     {
       id: "11",
@@ -104,7 +98,6 @@ const Songs = () => {
       artist: "Frank Sinatra",
       category: "Jazz Standards",
       duration: "3:21",
-      audioUrl: "/audio/the-way-you-look-tonight.mp3",
     },
     {
       id: "12",
@@ -119,7 +112,6 @@ const Songs = () => {
       artist: "Nat King Cole",
       category: "Jazz Standards",
       duration: "3:04",
-      audioUrl: "/audio/love.mp3",
     },
     {
       id: "14",
@@ -134,7 +126,6 @@ const Songs = () => {
       artist: "Lord Huron",
       category: "Folk & Acoustic",
       duration: "3:28",
-      audioUrl: "/audio/the-night-we-met.mp3",
     },
     {
       id: "16",
@@ -156,7 +147,6 @@ const Songs = () => {
       artist: "Lizzo",
       category: "Feel Good",
       duration: "2:39",
-      audioUrl: "/audio/good-as-hell.mp3",
     },
     {
       id: "19",
@@ -171,7 +161,6 @@ const Songs = () => {
       artist: "Justin Timberlake",
       category: "Feel Good",
       duration: "3:56",
-      audioUrl: "/audio/cant-stop-the-feeling.mp3",
     },
     {
       id: "21",
@@ -179,7 +168,6 @@ const Songs = () => {
       artist: "Neil Diamond",
       category: "Sing-Along",
       duration: "3:21",
-      audioUrl: "/audio/sweet-caroline.mp3",
     },
     {
       id: "22",
@@ -194,7 +182,6 @@ const Songs = () => {
       artist: "The Killers",
       category: "Sing-Along",
       duration: "3:42",
-      audioUrl: "/audio/mr-brightside.mp3",
     },
     {
       id: "24",
@@ -223,7 +210,6 @@ const Songs = () => {
       artist: "Adele",
       category: "Pop Favourites",
       duration: "4:45",
-      audioUrl: "/audio/someone-like-you.mp3",
     },
     {
       id: "28",
@@ -238,7 +224,6 @@ const Songs = () => {
       artist: "Lady Gaga & Bradley Cooper",
       category: "Movie Songs",
       duration: "3:35",
-      audioUrl: "/audio/shallow.mp3",
     },
     {
       id: "30",
@@ -260,7 +245,6 @@ const Songs = () => {
       artist: "The Weeknd",
       category: "Modern Hits",
       duration: "3:20",
-      audioUrl: "/audio/blinding-lights.mp3",
     },
     {
       id: "33",
@@ -275,7 +259,6 @@ const Songs = () => {
       artist: "Dua Lipa",
       category: "Modern Hits",
       duration: "3:23",
-      audioUrl: "/audio/levitating.mp3",
     },
     {
       id: "35",
@@ -283,7 +266,6 @@ const Songs = () => {
       artist: "The Beatles",
       category: "Timeless Classics",
       duration: "3:05",
-      audioUrl: "/audio/here-comes-the-sun.mp3",
     },
     {
       id: "36",
@@ -298,7 +280,6 @@ const Songs = () => {
       artist: "Ben E. King",
       category: "Timeless Classics",
       duration: "2:58",
-      audioUrl: "/audio/stand-by-me.mp3",
     },
     {
       id: "38",
@@ -320,7 +301,6 @@ const Songs = () => {
       artist: "Bill Withers",
       category: "Soul & R&B",
       duration: "4:15",
-      audioUrl: "/audio/lovely-day.mp3",
     },
   ];
 
