@@ -13,6 +13,7 @@ import {
   Volume2,
   User,
   Mail,
+  Phone,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
@@ -24,6 +25,7 @@ const Pricing = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -65,6 +67,7 @@ const Pricing = () => {
       setFormData({
         name: "",
         email: "",
+        phone: "",
       });
     } catch (error) {
       console.error("Form submission error:", error);
@@ -227,7 +230,7 @@ const Pricing = () => {
 
         <div className="container mx-auto mt-8">
           {!hasSubmittedForm ? (
-            <Card className="max-w-2xl mx-auto">
+            <Card className="max-w-xl mx-auto">
               <CardHeader className="text-center">
                 <CardTitle className="font-serif text-3xl text-foreground mb-4">
                   View Pricing Information
@@ -244,7 +247,7 @@ const Pricing = () => {
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
-                  className="space-y-6"
+                  className="space-y-4 px-16"
                 >
                   {/* Netlify needs this hidden input to map the submission */}
                   <input
@@ -255,7 +258,7 @@ const Pricing = () => {
                   {/* Honeypot field for spam bots */}
                   <input type="hidden" name="bot-field" />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-6 pb-6">
                     <div className="space-y-2">
                       <Label
                         htmlFor="name"
@@ -288,6 +291,24 @@ const Pricing = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="phone"
+                        className="flex items-center gap-2 font-sans"
+                      >
+                        <Phone className="h-4 w-4" />
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Your phone number"
                         required
                       />
                     </div>
