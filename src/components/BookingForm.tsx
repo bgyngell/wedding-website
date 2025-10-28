@@ -20,10 +20,29 @@ const BookingForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Format the date from yyyy-mm-dd to dd-mm-yyyy
-    const formattedDate = formData.eventDate
-      ? formData.eventDate.split("-").reverse().join("-")
-      : "";
+    // Format the date from yyyy-mm-dd to "DD MMM YYYY" (e.g., "25 Dec 2025")
+    let formattedDate = "";
+    if (formData.eventDate) {
+      const date = new Date(formData.eventDate + "T00:00:00");
+      const day = date.getDate();
+      const monthNames = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      const month = monthNames[date.getMonth()];
+      const year = date.getFullYear();
+      formattedDate = `${day} ${month} ${year}`;
+    }
 
     // Encode the form data for Netlify submission
     const encodedData = new URLSearchParams({
