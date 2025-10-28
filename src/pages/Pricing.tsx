@@ -14,6 +14,7 @@ import {
   User,
   Mail,
   Phone,
+  Calendar,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
@@ -26,6 +27,7 @@ const Pricing = () => {
     name: "",
     email: "",
     phone: "",
+    eventDate: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -68,6 +70,7 @@ const Pricing = () => {
         name: "",
         email: "",
         phone: "",
+        eventDate: "",
       });
     } catch (error) {
       console.error("Form submission error:", error);
@@ -309,6 +312,23 @@ const Pricing = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="Your phone number"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="eventDate"
+                        className="flex items-center gap-2 font-sans"
+                      >
+                        <Calendar className="h-4 w-4" />
+                        Event Date
+                      </Label>
+                      <Input
+                        id="eventDate"
+                        name="eventDate"
+                        type="date"
+                        value={formData.eventDate}
+                        onChange={handleChange}
                         required
                       />
                     </div>
