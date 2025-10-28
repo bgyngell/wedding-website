@@ -50,18 +50,18 @@ const Pricing = () => {
       const date = new Date(formData.eventDate + "T00:00:00");
       const day = date.getDate();
       const monthNames = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
+        "January",
+        "February",
+        "March",
+        "April",
         "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
       ];
       const month = monthNames[date.getMonth()];
       const year = date.getFullYear();
