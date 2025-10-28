@@ -44,10 +44,16 @@ const Pricing = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Format the date from yyyy-mm-dd to dd-mm-yyyy
+    const formattedDate = formData.eventDate
+      ? formData.eventDate.split("-").reverse().join("-")
+      : "";
+
     // Encode the form data for Netlify submission
     const encodedData = new URLSearchParams({
       "form-name": "pricing-access",
       ...formData,
+      eventDate: formattedDate,
     }).toString();
 
     try {

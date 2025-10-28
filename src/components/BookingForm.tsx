@@ -20,10 +20,16 @@ const BookingForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Format the date from yyyy-mm-dd to dd-mm-yyyy
+    const formattedDate = formData.eventDate
+      ? formData.eventDate.split("-").reverse().join("-")
+      : "";
+
     // Encode the form data for Netlify submission
     const encodedData = new URLSearchParams({
       "form-name": "booking",
       ...formData,
+      eventDate: formattedDate,
     }).toString();
 
     try {
